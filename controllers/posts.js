@@ -43,6 +43,12 @@ module.exports = {
         caption: req.body.caption,
         likes: 0,
         user: req.user.id,
+        ingredients: req.body.ingredients,
+        directions: req.body.directions,
+        instagramLink: req.body.instagramLink,
+        youtubeLink: req.body.youtubeLink,
+        tiktokLink: req.body.tiktokLink,
+        twitterLink: req.body.twitterLink,
       });
       console.log("Post has been added!");
       res.redirect("/profile");

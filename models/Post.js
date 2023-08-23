@@ -29,6 +29,30 @@ const PostSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  ingredients: {
+    type: String,
+    required: true,
+  },
+  directions: {
+    type: String,
+    required: true,
+  },
+  instagramLink: {
+    type: String,
+    required: false,
+  },
+  youtubeLink: {
+    type: String,
+    required: false,
+  },
+  tiktokLink: {
+    type: String,
+    required: false,
+  },
+  twitterLink: {
+    type: String,
+    required: false,
+  },
 });
 
 module.exports = mongoose.model("Post", PostSchema);
