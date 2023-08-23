@@ -25,7 +25,7 @@ connectDB();
 app.set("view engine", "ejs");
 
 //Static Folder
-app.use(express.static("public"));
+app.use(express.static("public")); //public js not working(disappears) with get post route for some reason (not sure why)
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
