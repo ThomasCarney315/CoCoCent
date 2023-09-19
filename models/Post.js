@@ -30,11 +30,11 @@ const PostSchema = new mongoose.Schema({
     default: Date.now,
   },
   ingredients: {
-    type: String,
+    type: Array,
     required: true,
   },
   directions: {
-    type: String,
+    type: Array,
     required: true,
   },
   instagramLink: {

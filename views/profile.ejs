@@ -19,11 +19,11 @@
                 <textarea class="form-control" id="caption" name="caption"></textarea>
               </div>
               <div class="mb-3">
-                <label for="ingredients" class="form-label">Ingredients</label>
+                <label for="ingredients" class="form-label">Ingredients <span class="instructions">*(type each ingredient on its own line. <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">example</a>)</span></label>
                 <textarea class="form-control" id="ingredients" name="ingredients"></textarea>
               </div>
               <div class="mb-3">
-                <label for="directions" class="form-label">Directions</label>
+                <label for="directions" class="form-label">Directions <span class="instructions">*(type each direction on its own line. <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">example</a>)</span></label>
                 <textarea class="form-control" id="directions" name="directions"></textarea>
               </div>
               <div class="mb-3">
@@ -66,5 +66,23 @@
       </div>  
     </div>
   </div>
-</div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Example Inputs and Instructions</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="/imgs/example.png" alt="inputs example image">
+          <p>Type each ingredient or direction/step then press enter for the new line. When submitted, the ingredients will be converted to a bullet pointed list and the directions will be converted to a numbered list.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <%- include('partials/footer') -%>

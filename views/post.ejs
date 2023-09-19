@@ -50,18 +50,28 @@
         </a>
         <%}%>
       </div>
-
-      <%if(post.ingredients){ %>
+      <!-- if exists, loop through array and populate ul with each ingredient -->
+      <% let ingredients = post.ingredients %>
+      <%if(ingredients){ %>
       <div>
-        
         <h3>Ingredients</h3>
-        <p><%= post.ingredients %></p>
+        <ul>
+          <% for( let ingredient of ingredients ) { %>
+            <li><%= ingredient %></li>
+          <% } %>
+        </ul>
       </div>
       <%}%>
-      <% if (post.directions) { %> 
+      <!-- if exists, loop through array and populate ol with each step of directions -->
+      <% let steps = post.directions %>
+      <% if (steps) { %> 
         <div>
           <h3>Directions</h3>
-          <p><%= post.directions %></p>
+          <ol>
+            <% for( let step of steps ) { %>
+              <li><%= step %></li>
+            <% } %>
+          </ol>
         </div>
         <% } %>
       <form action="/comment/createComment/<%= post.id %>" method="POST">

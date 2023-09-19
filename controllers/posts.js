@@ -35,6 +35,8 @@ module.exports = {
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
+      const ingredients = req.body.ingredients.split("\n");
+      const directions = req.body.directions.split("\n");
 
       await Post.create({
         title: req.body.title,
@@ -43,8 +45,8 @@ module.exports = {
         caption: req.body.caption,
         likes: 0,
         user: req.user.id,
-        ingredients: req.body.ingredients,
-        directions: req.body.directions,
+        ingredients: ingredients,
+        directions: directions,
         instagramLink: req.body.instagramLink,
         youtubeLink: req.body.youtubeLink,
         tiktokLink: req.body.tiktokLink,
