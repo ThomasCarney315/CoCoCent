@@ -1,7 +1,7 @@
 textarea {
     height: 150px;
   }
-#instructions {
+.instructions {
     font-size: 12px;
     color: #999;
   }
