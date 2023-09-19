@@ -23,6 +23,47 @@
         </form>
         <%}%>
       </div>
+      <div class="col-3 mt-5">
+        <p><%= post.caption %></p>
+      </div>
+
+      <div class="links">
+        <h5>Like, share or comment</h5>
+        <%if (post.instagramLink) { %>
+        <a target="_blank" href="<%= post.instagramLink %>" >
+          <i class="bi bi-instagram btn" style="font-size: 2em; color: pink"></i>
+        </a>
+        <%}%>
+        <%if (post.youtubeLink) { %>
+        <a target="_blank" href="<%= post.youtubeLink %>" >
+          <i class="bi bi-youtube btn" style="font-size: 2em; color: red;"></i>
+        </a>
+        <%}%>
+        <%if (post.twitterLink) { %>
+        <a target="_blank" href="<%= post.twitterLink %>" >
+          <i class="bi bi-twitter-x btn" style="font-size: 2em; color: black;"></i>
+        </a>
+        <%}%>
+        <%if (post.tiktokLink) { %>
+        <a target="_blank" href="<%= post.tiktokLink %>" >
+          <i class="bi bi-tiktok btn" style="font-size: 2em; color: black;"></i>
+        </a>
+        <%}%>
+      </div>
+
+      <%if(post.ingredients){ %>
+      <div>
+        
+        <h3>Ingredients</h3>
+        <p><%= post.ingredients %></p>
+      </div>
+      <%}%>
+      <% if (post.directions) { %> 
+        <div>
+          <h3>Directions</h3>
+          <p><%= post.directions %></p>
+        </div>
+        <% } %>
       <form action="/comment/createComment/<%= post.id %>" method="POST">
         <div class="mb-3">
           <label for="comment" class="form-label">Comment on this post</label>
@@ -36,9 +77,6 @@
             <span><%= comments[i].comment%></span>
         </div>
       <% } %>
-    </div>
-    <div class="col-3 mt-5">
-      <p><%= post.caption %></p>
     </div>
     <div class="col-6 mt-5">
       <a class="btn btn-primary" href="/profile">Return to Profile</a>
